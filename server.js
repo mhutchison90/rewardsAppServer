@@ -20,7 +20,10 @@ massive(process.env.CONNECTION_STRING).then(db => {
 
 // --ENDPOINTS--
 app.get('/api/user/:id', user_controller.getUser);
+app.put('/api/user/:id', user_controller.updateUser);
 
 // --SETUP APP TO LISTEN TO PORT--
 const PORT = 3050; // Development Port
+// const PORT = 8088; // Deployment Port
+
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
