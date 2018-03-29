@@ -1,0 +1,29 @@
+{
+  "name": "rewardsappserver",
+  "version": "0.0.1",
+  "description": "Server for the rewardsApp ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhutchison90/rewardsAppServer.git"
+  },
+  "author": "Michael J. Hutchison",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhutchison90/rewardsAppServer/issues"
+  },
+  "homepage": "https://github.com/mhutchison90/rewardsAppServer#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "massive": "^4.7.1"
+  }
+}
