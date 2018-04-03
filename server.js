@@ -1,6 +1,7 @@
 // --IMPORTS--
 require('dotenv').config();
 const express = require('express')
+    , cors = require ('cors')
     , bodyParser = require('body-parser')
     , massive = require('massive')
     , user_controller = require('./controllers/user_controller')
@@ -10,6 +11,7 @@ const express = require('express')
 // --SETUP APP--
 const app = express();
 app.use( express.static( `${__dirname}/../build` ) );
+app.use(cors());
 
 app.use(bodyParser.json());
 
