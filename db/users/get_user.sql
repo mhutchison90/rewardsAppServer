@@ -7,10 +7,11 @@ u.picture,
 u.auth_id,
 u.birthday,
 u.phone,
+u.pointBalance,
 
-(SELECT SUM(floor(total::money::numeric))
-FROM orders
-WHERE userid = $1) as pointBalance,
+-- (SELECT SUM(floor(total::money::numeric))
+-- FROM orders
+-- WHERE userid = $1) as pointBalance,
 
 json_agg(json_build_object(
 'orderid', o.orderid,
