@@ -3,7 +3,8 @@ require('dotenv').config();
 const express = require('express')
     , bodyParser = require('body-parser')
     , massive = require('massive')
-    , user_controller = require('./controllers/user_controller');
+    , user_controller = require('./controllers/user_controller')
+    , order_controller = require('./controllers/order_controller');
 
 
 // --SETUP APP--
@@ -19,8 +20,10 @@ massive(process.env.CONNECTION_STRING).then(db => {
 
 
 // --ENDPOINTS--
-app.get('/api/user/:id', user_controller.getUser);
-app.put('/api/user/:id', user_controller.updateUser);
+app.get('/api/user/:id', user_controller.getUser); // get all users info along with thier order history and credentials
+app.put('/api/update/user/:id', user_controller.updateUser); // updates user  -- to be used in account settings
+app.post('/api/order/new', order_controller.newOrder); 
+
 
 // --SETUP APP TO LISTEN TO PORT--
 const PORT = 3050; // Development Port
