@@ -25,6 +25,8 @@ massive(process.env.CONNECTION_STRING).then(db => {
 app.get('/api/user/:id', user_controller.getUser); // get all users info along with thier order history and credentials
 app.put('/api/update/user/:id', user_controller.updateUser); // updates user  -- to be used in account settings
 app.post('/api/order/new', order_controller.newOrder); 
+app.post('/api/user/info', user_controller.checkUser);
+
 
 
 // --SETUP APP TO LISTEN TO PORT--
