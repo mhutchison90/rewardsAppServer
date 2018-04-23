@@ -11,12 +11,17 @@ module.exports = {
 
   updateUser: (req, res, next) => {
     const db = req.app.get('db');
-    var { firstname, lastname, email, picture, birthday, phone } = req.body;
+    var { firstname, lastname, email, picture, birthday, phone, pointbalance, auth_id } = req.body;
     var { userid } = req.params;
-    db.users.update_user([firstname, lastname, email, picture, birthday, phone, req.params.id[0]])
-      .then(user => res.status(200).send(req.body))
+    db.users.update_user([firstname, lastname, email, picture, birthday, phone, pointbalance, auth_id, req.params.id])
+    .then((userInfo)=>{
+      
+      db.users.get_user([req.body.auth_id])
+      .then(user => res.status(200).send(user[0]))
       .catch((err) => res.status(500).send(console.log('error:', err)));
+    })
   },
+
   checkUser: (req, res, next) => {
     const db = req.app.get('db');
     const { params } = req.params;

@@ -30,7 +30,8 @@ app.post('/api/user/info', user_controller.checkUser);
 
 
 // --SETUP APP TO LISTEN TO PORT--
-const PORT = 3050; // Development Port
+// const PORT = 3050; // Development Port
+const PORT = 8080; // Testing Port
 // const PORT = 8088; // Deployment Port
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))

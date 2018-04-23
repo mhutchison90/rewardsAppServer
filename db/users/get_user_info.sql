@@ -1,0 +1,1 @@
+SELECT Auth_ID from users where userid = $1;
